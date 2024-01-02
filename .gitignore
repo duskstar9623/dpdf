@@ -1,0 +1,11 @@
+# project related
+**/node_modules
+package-lock.json
+dist
+app
+
+
+# development related
+.vscode
+.idea
+.npmrc

@@ -1,0 +1,53 @@
+{
+  "name": "dpdf",
+  "version": "1.0.0",
+  "description": "A simple and easy-to-use desktop app for PDF toolset based on Vue3 and Electron",
+  "main": "electron/main.js",
+  "private": true,
+  "scripts": {
+    "dev:vite": "vite --config vite.config.mjs",
+    "dev:electron": "wait-on tcp:9623 && cross-env NODE_ENV=development electron .",
+    "dev": "concurrently -k -r \"npm run dev:vite\" \"npm run dev:electron\"",
+    "build:vite": "vite build --config vite.config.mjs",
+    "build": "npm run build:vite && electron-builder",
+    "preview": "vite preview --port 2240 && wait-on tcp:2240 && cross-env NODE_ENV=production electron .",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duskstar9623/dpdf.git"
+  },
+  "author": "Duskstar <duskstar@foxmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duskstar9623/dpdf/issues",
+    "email": "duskstar@foxmail.com"
+  },
+  "homepage": "https://github.com/duskstar9623/dpdf#readme",
+  "dependencies": {
+    "ant-design-vue": "^4.0.8",
+    "pinia": "^2.1.7",
+    "vue": "^3.3.11",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.3.3",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1",
+    "eslint": "^8.49.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "prettier": "^3.0.3",
+    "vite": "^5.0.10",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "productName": "DPDF",
+    "appId": "com.duskstar.app"
+  }
+}
