@@ -6,6 +6,4 @@ app
 
 
 # development related
-.vscode
-.idea
 .npmrc

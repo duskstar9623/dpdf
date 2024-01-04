@@ -13,16 +13,16 @@ const createWindow = () => {
             nodeIntegration: true,
             contextIsolation: false
         },
-        icon: path.join(process.cwd(), 'resources/logo.png')
+        icon: path.join(process.cwd(), 'public/logo.png')
     });
 
-    if(process.env.NODE_ENV === 'development') {
-        mainWindow.loadURL('http://127.0.0.1:9623');
+    if (process.env.NODE_ENV === 'development') {
+        mainWindow.loadURL('http://localhost:9623');
         mainWindow.webContents.openDevTools();
-    }else if(process.env.NODE_ENV === 'production') {
+    } else if (process.env.NODE_ENV === 'production') {
         mainWindow.loadFile(path.resolve(__dirname, '../dist/index.html'));
     }
-}
+};
 
 app.whenReady().then(() => {
     createWindow();
@@ -30,8 +30,8 @@ app.whenReady().then(() => {
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
     });
-})
+});
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit();
-})
+});

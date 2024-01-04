@@ -1,0 +1,11 @@
+{
+    "cSpell.words": [
+        "Antd", 
+        "dpdf", 
+        "Duskstar", 
+        "pinia"
+    ],
+    "eslint.enable": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
